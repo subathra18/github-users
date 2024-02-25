@@ -1,5 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { UserListing, UserDetails, ErrorPage, Landing, Layout } from "./pages";
+import { loader as userDetailsLoader } from "./pages/UserDetails";
+import Error from "./components/Error";
 import "./App.css";
 
 function App() {
@@ -12,14 +14,18 @@ function App() {
         {
           index: true,
           element: <Landing></Landing>,
+          errorElement: <ErrorPage></ErrorPage>,
         },
         {
-          path: "/users",
+          path: "users",
           element: <UserListing></UserListing>,
+          errorElement: <Error></Error>,
         },
         {
-          path: "/users/:id",
+          path: "users/:id",
           element: <UserDetails></UserDetails>,
+          errorElement: <ErrorPage></ErrorPage>,
+          loader: userDetailsLoader,
         },
       ],
     },

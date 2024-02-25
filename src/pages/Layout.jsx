@@ -4,7 +4,8 @@ import { Outlet } from "react-router-dom";
 const Layout = () => {
   return (
     <div>
-      This is the layout<Outlet></Outlet>
+      <h1 className="header">Github Users</h1>
+      <Outlet></Outlet>
     </div>
   );
 };

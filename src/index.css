@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+  color: white;
+}
+.header {
+  padding-bottom: 30px;
+}
+.cardContent {
+  text-align: "start";
+  border: "4px solid #2f2f2f ";
+  color: "white";
+  background-color: "black";
+  padding-left: "15%";
+}
