@@ -12,3 +12,13 @@ body {
   background-color: "black";
   padding-left: "15%";
 }
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+.landingButton {
+  background-color: black;
+  border: 2px solid white;
+  margin: 50px;
+}

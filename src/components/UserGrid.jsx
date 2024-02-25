@@ -7,7 +7,6 @@ import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { cardStyle, boxStyle } from "./materialUI.js";
-import UserListing from "../pages/UserListing.jsx";
 
 const UserGrid = () => {
   const { data } = useLoaderData();

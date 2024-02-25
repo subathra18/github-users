@@ -1,6 +1,5 @@
 import React from "react";
 import { axiosInstance } from "../utils/axios";
-import User from "../components/User";
 import UsersList from "../components/UsersList";
 
 const UserListing = () => {
@@ -20,7 +19,7 @@ const UserListing = () => {
         window.innerHeight + window.scrollY,
         document.documentElement.scrollHeight
       );
-      setPageNumber((pageNumber) => pageNumber + 1);
+      setPageNumber((pageNumber) => pageNumber + 20);
     }
   };
 
