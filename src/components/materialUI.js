@@ -4,12 +4,10 @@ export const cardStyle = {
   color: "white",
   backgroundColor: "black",
   paddingLeft: "15%",
-  maxHeight: "100vh",
 };
 
 export const boxStyle = {
   lineHeight: 4,
   m: 1,
   letterSpacing: 3,
-  fontSize: "15px",
 };

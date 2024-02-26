@@ -13,33 +13,42 @@ const UserGrid = () => {
   const user = data.data;
   const { avatar_url, name } = user;
 
-  const propArray = ["name", "login", "location", "followers", "email", "blog"];
+  const propArray = [
+    { label: "Name", key: "name" },
+    { label: "login", key: "login" },
+    { label: "location", key: "location" },
+    { label: "company", key: "company" },
+    { label: "public Repos", key: "public_repos" },
+    { label: "followers", key: "followers" },
+    { label: "following", key: "following" },
+    { label: "email", key: "email" },
+    { label: "twitter username", key: "twitter_username" },
+    { label: "blog", key: "blog" },
+  ];
   return (
     <Grid container spacing={2}>
-      <Grid item xs={4}>
+      <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
         <Card>
           <CardContent style={{ backgroundColor: "black", color: "white" }}>
             <Avatar
               alt={name}
               src={avatar_url}
-              style={{ width: 300, height: 300, marginLeft: "40px" }}
+              style={{ width: "70%", height: "70%", marginLeft: "30px" }}
             />
-            <Typography component={"span"} variant="body2">
-              <Box style={{ ...boxStyle, fontSize: 30, paddingLeft: "5px" }}>
-                {name}
-              </Box>
+            <Typography component={"span"} variant="h3">
+              {name}
             </Typography>
           </CardContent>
         </Card>
       </Grid>
-      <Grid item xs={7}>
+      <Grid item xs={12} sm={7} md={7} lg={7} xl={7}>
         <Card>
           <CardContent style={cardStyle}>
-            {propArray.map((prop, index) => {
-              return user[prop] ? (
+            {propArray.map(({ label, key }, index) => {
+              return user[key] ? (
                 <Typography key={index} component={"span"} variant="body2">
                   <Box sx={boxStyle}>
-                    {prop.toUpperCase()}:{user[prop]}
+                    {label.toUpperCase()}:{user[key]}
                   </Box>
                 </Typography>
               ) : (
