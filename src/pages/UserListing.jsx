@@ -1,6 +1,7 @@
 import React from "react";
 import { axiosInstance } from "../utils/axios";
 import UsersList from "../components/UsersList";
+import Search from "../components/Search";
 
 const UserListing = () => {
   const [pageNumber, setPageNumber] = React.useState(1);
@@ -8,6 +9,9 @@ const UserListing = () => {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState({});
   const url = "/users";
+  const onSearch = (data) => {
+    setUsers(data);
+  };
 
   const handleScroll = () => {
     if (
@@ -45,14 +49,19 @@ const UserListing = () => {
     fetchData();
   }, [pageNumber]);
 
-  React.useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // React.useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
-  return <UsersList users={users}></UsersList>;
+  return (
+    <>
+      <Search onSearch={onSearch}></Search>
+      <UsersList users={users}></UsersList>
+    </>
+  );
 };
 
 export default UserListing;
